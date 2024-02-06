@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "829517273361",
+    "project_id": "crickket-4cc00",
+    "storage_bucket": "crickket-4cc00.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:829517273361:android:107530bb596fcd445314b0",
+        "android_client_info": {
+          "package_name": "com.example.cricket"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQBwWv4n5LlTYhxg-eNyDUsI2TqMFKZxk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
