@@ -11,6 +11,7 @@ import "package:cricket/signup.dart" ;
 import "package:cricket/sign in.dart" ;
 import 'package:cricket/loginsignup.dart';
 import 'package:cricket/weather.dart';
+import 'package:cricket/Splash screen.dart';
 
 
 
@@ -30,13 +31,13 @@ class Myapp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      initialRoute: "entry_page",
+      initialRoute: Splash.page,
       routes: {
            EntryPage.page:(context)=>  EntryPage(),
         SignupPage.page:(context)=>  SignupPage(),
         SigninPage.page:(context)=>  SigninPage(),
-        "weather_page":(context)=>  weather(),
-
+        weather.page:(context)=>  weather(),
+        Splash.page:(context)=> Splash()
       },
 
     );
