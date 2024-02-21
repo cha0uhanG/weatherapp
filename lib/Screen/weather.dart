@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:cricket/api_calling.dart';
+import 'package:cricket/Network/api_calling.dart';
 import 'package:get/get.dart';
-import "package:cricket/controller.dart" ;
+import "package:cricket/Contollerss/controller.dart" ;
 import 'package:firebase_core/firebase_core.dart';
-import 'firebase_options.dart';
+import '../firebase_options.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cricket/loginsignup.dart';
@@ -45,7 +45,7 @@ class _weatherState extends State<weather> {
 
   Future<void> fetchTemperature() async {
     try {
-      temp= await ap.testing();
+      temp= await ap.testing("almora");
       print("temperature  is $temp");
       controller.tempp.value = temp;
 
