@@ -10,9 +10,7 @@ import 'firebase_options.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import "package:cricket/onboarding/signup.dart" ;
 import "package:cricket/onboarding/sign%20in.dart" ;
-import 'package:cricket/loginsignup.dart';
-import 'package:cricket/Screen/weather.dart';
-import 'package:cricket/Splash screen.dart';
+import 'package:cricket/Splash_screen/Splash%20screen.dart';
 
 
 
@@ -34,10 +32,8 @@ class Myapp extends StatelessWidget {
     return MaterialApp(debugShowCheckedModeBanner: false,
       initialRoute: Splash.page,
       routes: {
-           EntryPage.page:(context)=>  EntryPage(),
         SignupPage.page:(context)=>  SignupPage(),
         SigninPage.page:(context)=>  SigninPage(),
-        weather.page:(context)=>  weather(),
         Splash.page:(context)=> Splash(),
         WeatherScreen.page:(context)=>  WeatherScreen(),
       },

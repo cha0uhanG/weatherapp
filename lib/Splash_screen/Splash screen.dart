@@ -1,12 +1,9 @@
 
 import 'dart:async';
-import 'package:cricket/loginsignup.dart';
 import 'package:cricket/onboarding/sign%20in.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:cricket/Screen/weather.dart';
-
-import 'Screen/weather_screen.dart';
+import '../Screen/weather_screen.dart';
 
 
 
@@ -48,9 +45,9 @@ class _SplashState extends State<Splash> {
   void checkuser(){
     User? user = FirebaseAuth.instance.currentUser;    // here we are checking wheter user is logged in or not
   if (user != null) {
-    Navigator.pushNamed(context,WeatherScreen.page);
+    Navigator.pushReplacementNamed(context,WeatherScreen.page);
   } else {
-    Navigator.pushNamed(context, SigninPage.page);
+    Navigator.pushReplacementNamed(context, SigninPage.page);
 
   }
 

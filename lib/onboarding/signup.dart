@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:cricket/Screen/weather.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import "package:cricket/onboarding/sign in.dart";
 
