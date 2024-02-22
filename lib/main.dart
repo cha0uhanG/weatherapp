@@ -13,6 +13,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import "package:cricket/onboarding/signup.dart" ;
 import "package:cricket/onboarding/sign%20in.dart" ;
 import 'package:cricket/Splash_screen/Splash%20screen.dart';
+import 'package:get/get.dart';
 
 
 
@@ -32,15 +33,15 @@ class Myapp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(debugShowCheckedModeBanner: false,
-      initialRoute: Splash.page,
-      routes: {
-        SignupPage.page:(context)=>  SignupPage(),
-        SigninPage.page:(context)=>  SigninPage(),
-        Splash.page:(context)=> Splash(),
-        WeatherScreen.page:(context)=>  WeatherScreen(),
-        LocationPage.page:(context)=>  LocationPage(),
-      },
+    return GetMaterialApp(debugShowCheckedModeBanner: false,
+      initialRoute: '/',
+      getPages: [
+        GetPage(name: '/', page: () => Splash()),
+        GetPage(name: '/signup', page: () => SignupPage()),
+        GetPage(name: '/signin', page: () => SigninPage()),
+        GetPage(name: '/weather', page: () => WeatherScreen()),
+        GetPage(name: '/location', page: () => LocationPage()),
+      ],
 
     );
   }

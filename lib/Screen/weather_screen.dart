@@ -1,6 +1,7 @@
 import 'package:cricket/Screen/weather_ui.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import '../Network/api_calling.dart';
 import '../features/alert_messages.dart';
 import '../onboarding/sign in.dart'; // Add this import for making HTTP requests
@@ -75,12 +76,13 @@ class _WeatherScreenState extends State<WeatherScreen> {
                         // Proceed with fetching weather data
                         dynamic? temperature = await ap.testing(location);
                         print("The temperature in $location is $temperature");
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => UiScreen(location: location, temp: temperature),
-                          ),
-                        );
+                        // Navigator.push(
+                        //   context,
+                        //   MaterialPageRoute(
+                        //     builder: (context) => UiScreen(location: location, temp: temperature),
+                        //   ),
+                        // );
+                        Get.to(UiScreen(location: location, temp: temperature));
                       }
                     },
                     child: Text('Get Weather'),

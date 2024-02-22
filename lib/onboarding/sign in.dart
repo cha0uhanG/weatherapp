@@ -3,6 +3,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/widgets.dart';
+import 'package:get/get.dart';
 
 import '../Screen/Location_screen.dart';
 import '../Screen/weather_screen.dart';
@@ -66,7 +67,7 @@ class _SigninPageState extends State<SigninPage> {
                   var loggeduser = await firre.signInWithEmailAndPassword(email: userid, password:psswrd);
                   print(loggeduser);
                   if(loggeduser!=null){
-                    Navigator.pushReplacementNamed(context,LocationPage.page);}
+                    Get.offAllNamed('/location');}
                 }catch(e)
                 {print(e);
                 Snack();
@@ -79,7 +80,7 @@ class _SigninPageState extends State<SigninPage> {
               Row(
                 children: [
                   Text("New user?"), GestureDetector(onTap:(){
-                    Navigator.pushNamed(context, SignupPage.page);
+                    Get.toNamed( '/signup');
                   },child: Text("Reigister here",style:
                     TextStyle(fontWeight: FontWeight.w400,color: Colors.purple),))
                 ],

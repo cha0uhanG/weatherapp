@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:cricket/onboarding/sign%20in.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:get/get.dart';
 import '../Screen/Location_screen.dart';
 import '../Screen/weather_screen.dart';
 
@@ -46,9 +47,9 @@ class _SplashState extends State<Splash> {
   void checkuser(){
     User? user = FirebaseAuth.instance.currentUser;    // here we are checking wheter user is logged in or not
   if (user != null) {
-    Navigator.pushReplacementNamed(context,LocationPage.page);
+    Get.offAllNamed('/location');
   } else {
-    Navigator.pushReplacementNamed(context, SigninPage.page);
+    Get.offAllNamed('/signin');
 
   }
 

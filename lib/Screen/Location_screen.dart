@@ -45,7 +45,7 @@ class _LocationPageState extends State<LocationPage> {
   Future<void> getLocation() async {
     try {
       await Geolocator.checkPermission();
-      await Geolocator.requestPermission();                        // asking permssion from user
+      await Geolocator.requestPermission();
       Position position = await Geolocator.getCurrentPosition(desiredAccuracy: LocationAccuracy.high); // exxtracting location
       latitude = position.latitude.toString();
       longitude = position.longitude.toString();
@@ -79,57 +79,59 @@ class _LocationPageState extends State<LocationPage> {
         actions: [
           IconButton(
             onPressed: signOut,
-            icon: Icon(Icons.logout),
+            icon: Icon(Icons.logout,color: Colors.white,),
           ),
         ],
       ),
       body: Center(
-        child: Column(
-
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [SizedBox(height: 100,),
-            Obx(() => Text(
-              '  ${controller.citynamee.value}, ',
-              style: TextStyle(fontSize: 40,fontWeight: FontWeight.bold),
-            ),
-            ),
-        SizedBox(height:20),
-        Obx(() =>  Text(
-              '  ${controller.tempp.value}\u2103  ',
-              style: TextStyle(fontSize: 70,fontWeight: FontWeight.bold),
-            ),),
-          SizedBox(height: 10,),
-            Obx(() => Text(
-              ' Humidity is ${controller.humid.value}, ',
-              style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),
-            ),
-            ),
-          SizedBox(height: 150,),
-            Text(" Check Wheather for any City",style: TextStyle(
-              fontSize: 18, // Adjust the font size as needed
-              fontWeight: FontWeight.bold, // Adjust the font weight as needed
-            ),),
-            SizedBox(height: 5,),
-            Container(width: 120, height: 30,
-              decoration: BoxDecoration(color: Colors.grey[800],borderRadius: BorderRadius.circular(8),
+        child: SingleChildScrollView(
+          child: Column(
+          
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [SizedBox(height: 100,),
+              Obx(() => Text(
+                '  ${controller.citynamee.value}, ',
+                style: TextStyle(fontSize: 40,fontWeight: FontWeight.bold),
               ),
-              child: TextButton(
-                onPressed: () {
-                  Navigator.pushNamed(context, WeatherScreen.page);
-                },
-                child: Text(
-                  "Click",
-                  style: TextStyle(
-                    color: Colors.white, // Change the text color as needed
-                    fontSize: 12, // Adjust the font size as needed
-                    fontWeight: FontWeight.bold, // Adjust the font weight as needed
+              ),
+          SizedBox(height:20),
+          Obx(() =>  Text(
+                '  ${controller.tempp.value}\u2103  ',
+                style: TextStyle(fontSize: 70,fontWeight: FontWeight.bold),
+              ),),
+            SizedBox(height: 10,),
+              Obx(() => Text(
+                ' Humidity is ${controller.humid.value}, ',
+                style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),
+              ),
+              ),
+            SizedBox(height: 150,),
+              Text(" Check Wheather for any City",style: TextStyle(
+                fontSize: 18, // Adjust the font size as needed
+                fontWeight: FontWeight.bold, // Adjust the font weight as needed
+              ),),
+              SizedBox(height: 5,),
+              Container(width: 120, height: 30,
+                decoration: BoxDecoration(color: Colors.grey[800],borderRadius: BorderRadius.circular(8),
+                ),
+                child: TextButton(
+                  onPressed: () {
+                    Get.toNamed( '/weather');
+                  },
+                  child: Text(
+                    "Click",
+                    style: TextStyle(
+                      color: Colors.white, // Change the text color as needed
+                      fontSize: 12, // Adjust the font size as needed
+                      fontWeight: FontWeight.bold, // Adjust the font weight as needed
+                    ),
                   ),
                 ),
               ),
-            ),
-
-            SizedBox(height: 5,)
-          ],
+          
+              SizedBox(height: 5,)
+            ],
+          ),
         ),
       ),
     );

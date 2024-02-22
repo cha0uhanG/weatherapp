@@ -28,9 +28,6 @@ class BP {
         double temperature = jsonData['main']['temp'];
         String cityName = jsonData['name'];
         int humidity= jsonData['main']['humidity'];
-        print(cityName);
-        print("temperature");
-        print(temperature);
         return WeatherData(
           temperature: temperature,
           cityName: cityName,
@@ -53,7 +50,7 @@ class BP {
 
 
 
-// API callin using location name.
+// API calling using city name.
 
 class AP {
   Dio _dio = Dio(); // Create Dio instance

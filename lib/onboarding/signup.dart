@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import "package:cricket/onboarding/sign in.dart";
+import 'package:get/get.dart';
 
 import '../Screen/Location_screen.dart';
 import '../Screen/weather_screen.dart';
@@ -64,7 +65,7 @@ class _SignupPageState extends State<SignupPage> {
                     var loggeduser = await firre.createUserWithEmailAndPassword(email: userid, password: psswrd);
                     print(loggeduser);
                     if(loggeduser!=null){
-                      Navigator.pushReplacementNamed(context,LocationPage.page);}
+                      Get.offAllNamed('/location');}
                   }catch(e)
                   {print(e);
                   Snack();
@@ -76,7 +77,7 @@ class _SignupPageState extends State<SignupPage> {
               Row(
                 children: [
                   Text("Already user?"), GestureDetector(onTap:(){
-                    Navigator.pushNamed(context, SigninPage.page);
+                    Get..toNamed('/signin');
                   },child: Text("SignIn here",style:
                   TextStyle(fontWeight: FontWeight.w400,color: Colors.purple),))
                 ],
