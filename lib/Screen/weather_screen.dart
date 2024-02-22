@@ -25,9 +25,9 @@ class _WeatherScreenState extends State<WeatherScreen> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Weather Checker'),
+    return Scaffold(backgroundColor: Colors.grey,
+      appBar: AppBar(backgroundColor:  Colors.grey[800],
+        title: Center(child: Text('Weather Checker',style: TextStyle(color:Colors.white ))),
         actions: [
           IconButton(
             onPressed: _signOut,
@@ -40,7 +40,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
           Container(
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: AssetImage('images/weather.jpeg'),
+                image: AssetImage('images/cloudd.jpeg'),
                 fit: BoxFit.cover, // This ensures that the image covers the entire container
               ),
             ),
@@ -56,7 +56,10 @@ class _WeatherScreenState extends State<WeatherScreen> {
                     controller: _locationController,
                     decoration: InputDecoration(
                       labelText: 'Enter Location',
-                      border: OutlineInputBorder(),
+                      border: OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.black, width: 3.0), // Adjust color and width as needed
+                        borderRadius: BorderRadius.circular(15.0),
+                      ),
                     ),
                   ),
                   SizedBox(height: 20),

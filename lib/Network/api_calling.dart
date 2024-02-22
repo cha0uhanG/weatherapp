@@ -3,13 +3,11 @@ import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:dio/dio.dart';
 
-
-// API callin using latitude and longitude.
-import 'package:dio/dio.dart';
-
 import '../Mdel/model.dart';
 
-import 'package:dio/dio.dart';
+
+// API callin using latitude and longitude.
+
 
 
 
@@ -29,12 +27,14 @@ class BP {
         dynamic jsonData = response.data;
         double temperature = jsonData['main']['temp'];
         String cityName = jsonData['name'];
+        int humidity= jsonData['main']['humidity'];
         print(cityName);
         print("temperature");
         print(temperature);
         return WeatherData(
           temperature: temperature,
           cityName: cityName,
+          Humidity:humidity
         );
       } else {
         // Handle unsuccessful request
@@ -78,7 +78,6 @@ class AP {
         return null;
       }
     } catch (error) {
-      // Handle errors
       print("Error: $error");
       return null;
     }

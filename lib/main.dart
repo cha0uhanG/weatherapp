@@ -5,6 +5,7 @@ import 'package:cricket/Network/api_calling.dart';
 import 'package:get/get.dart';
 import "package:cricket/Contollerss/controller.dart" ;
 import 'package:firebase_core/firebase_core.dart';
+import 'package:get_storage/get_storage.dart';
 import 'Screen/Location_screen.dart';
 import 'Screen/weather_screen.dart';
 import 'firebase_options.dart';
@@ -22,6 +23,7 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+  await GetStorage.init();            // Used GetStorage for  saving the data locally.
   runApp(Myapp());
 }
 

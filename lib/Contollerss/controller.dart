@@ -5,5 +5,6 @@ class Controller extends GetxController{
 
   Rx<dynamic> tempp = Rx<dynamic>(22);
   Rx<String> citynamee = Rx<String>("delhi");
+  Rx<dynamic> humid = Rx<dynamic>(10);
 
 }
