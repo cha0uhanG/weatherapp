@@ -1,10 +1,13 @@
 import 'package:cricket/Contollerss/controller.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:get/get.dart';
 import '../Mdel/model.dart';
 import '../Network/api_calling.dart';
 import 'package:cricket/Network/api_calling.dart';
+
+import '../onboarding/sign in.dart';
 
 
 
@@ -19,6 +22,11 @@ class _LocationPageState extends State<LocationPage> {
   String longitude = 'Fetching...';
   BP bp = BP();
   Controller controller = Get.put(Controller());
+
+  void signOut() {
+    FirebaseAuth.instance.signOut();
+    Navigator.pushNamed(context, SigninPage.page);
+  }
 
   @override
   void initState() {
@@ -54,19 +62,30 @@ class _LocationPageState extends State<LocationPage> {
     return Scaffold(
       appBar: AppBar(
         title: Center(child: Text('Weather')),
+        actions: [
+          IconButton(
+            onPressed: signOut,
+            icon: Icon(Icons.logout),
+          ),
+        ],
       ),
       body: Center(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+
           crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
+          children: [SizedBox(height: 100,),
             Obx(() => Text(
-              'Temperature in ${controller.citynamee.value} is ${controller.tempp.value}',
+              'Your curent location is  ${controller.citynamee.value} ',
               style: TextStyle(fontSize: 20),
-            )),
-          ],
+            ),
+            ),
+        Obx(() =>  Text(
+              ' The temperature is   ${controller.tempp.value}\u2103  there',
+              style: TextStyle(fontSize: 20),
+            ),) ],
         ),
       ),
     );
   }
 }
+

@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/widgets.dart';
 
+import '../Screen/Location_screen.dart';
 import '../Screen/weather_screen.dart';
 
 
@@ -65,10 +66,7 @@ class _SigninPageState extends State<SigninPage> {
                   var loggeduser = await firre.signInWithEmailAndPassword(email: userid, password:psswrd);
                   print(loggeduser);
                   if(loggeduser!=null){
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(builder: (context) => WeatherScreen()),
-                    );}
+                    Navigator.pushReplacementNamed(context,LocationPage.page);}
                 }catch(e)
                 {print(e);
                 Snack();

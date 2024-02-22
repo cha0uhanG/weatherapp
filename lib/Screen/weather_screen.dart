@@ -1,4 +1,4 @@
-import 'package:cricket/Screen/temperature_ui.dart';
+import 'package:cricket/Screen/weather_ui.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import '../Network/api_calling.dart';
