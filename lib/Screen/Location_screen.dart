@@ -86,7 +86,7 @@ class _LocationPageState extends State<LocationPage> {
       body: Center(
         child: SingleChildScrollView(
           child: Column(
-          
+
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [SizedBox(height: 100,),
               Obx(() => Text(

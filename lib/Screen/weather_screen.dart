@@ -32,7 +32,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
         actions: [
           IconButton(
             onPressed: _signOut,
-            icon: Icon(Icons.logout),
+            icon: Icon(Icons.logout,color: Colors.white,),
           ),
         ],
       ),
