@@ -5,6 +5,7 @@ import 'package:cricket/Network/api_calling.dart';
 import 'package:get/get.dart';
 import "package:cricket/Contollerss/controller.dart" ;
 import 'package:firebase_core/firebase_core.dart';
+import 'Screen/Location_screen.dart';
 import 'Screen/weather_screen.dart';
 import 'firebase_options.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -36,6 +37,7 @@ class Myapp extends StatelessWidget {
         SigninPage.page:(context)=>  SigninPage(),
         Splash.page:(context)=> Splash(),
         WeatherScreen.page:(context)=>  WeatherScreen(),
+        LocationPage.page:(context)=>  LocationPage(),
       },
 
     );

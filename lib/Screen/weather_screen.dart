@@ -7,7 +7,7 @@ import '../onboarding/sign in.dart'; // Add this import for making HTTP requests
 
 
 class WeatherScreen extends StatefulWidget {
-  static const page = "weather2";
+  static const page = "weather";
 
   @override
   _WeatherScreenState createState() => _WeatherScreenState();

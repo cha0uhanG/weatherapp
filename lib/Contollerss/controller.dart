@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 class Controller extends GetxController{
 
-  dynamic tempp = 24.06.obs ;
+  Rx<dynamic> tempp = Rx<dynamic>(22);
+  Rx<String> citynamee = Rx<String>("delhi");
 
 }
